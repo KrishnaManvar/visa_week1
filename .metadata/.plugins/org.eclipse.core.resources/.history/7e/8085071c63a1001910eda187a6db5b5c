@@ -1,0 +1,27 @@
+
+public class Time {
+	private double hour;
+	private double minute;
+	
+	Time (double hour, double minute){
+		this.hour = hour;
+		this.minute = minute;
+	}
+	
+	public static Time addTime(Time a, Time b) {
+		double totalhours = 0;
+		double totalminutes = 0;
+		
+		totalhours = a.hour + b.hour;
+		totalminutes = a.minute + b.minute;
+		
+		if(totalminutes>59) {
+			totalminutes -= 60;
+			totalhours ++;
+		}
+		Time added = new Time(totalhours, totalminutes);
+		return added;
+		
+	}
+
+}

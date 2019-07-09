@@ -1,0 +1,7 @@
+package com.visa.prj.entity;
+
+public class TV extends Product {
+	private String screenType;
+	
+
+}

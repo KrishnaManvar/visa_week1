@@ -1,0 +1,11 @@
+
+public class Time {
+	private double hour;
+	private double minute;
+	
+	Time (double hour, double minute){
+		this.hour = hour;
+		this.minute = minute;
+	}
+
+}

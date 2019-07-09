@@ -1,0 +1,13 @@
+package com.visa.prj.util;
+
+public class Array {
+	public static void sort(Comparable[] elems) {
+		for (int i = 0; i < elems.length; i++) {
+			for (int j = i+1; j < elems.length; j++) {
+				
+			}
+			
+		}
+	}
+
+}

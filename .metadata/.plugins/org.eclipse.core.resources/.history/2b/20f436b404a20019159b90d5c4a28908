@@ -1,0 +1,7 @@
+package com.visa.prj.entity;
+
+public class Mobile extends Product {
+	private String connectivity;
+	
+
+}

@@ -1,0 +1,22 @@
+package com.visa.prj.entity;
+/**
+ * This is an entity class to represent account business data
+ * @author root
+ * @version 1.0
+ *
+ */
+public class Account {
+	private double balance; //state of object [instance variable]
+	
+	public void deposit(double amount) {
+		balance += amount;
+	}
+	public double getBalance() {
+		return balance;
+	}
+
+
+
+
+
+}

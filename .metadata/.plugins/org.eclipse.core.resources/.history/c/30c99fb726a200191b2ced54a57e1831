@@ -1,0 +1,8 @@
+package com.visa.prj.dao;
+
+public class MobileDaoFactory {
+	public static MobileDao getMobileDao() {
+		return new MobileDaoMongoImpl();
+	}
+
+}
