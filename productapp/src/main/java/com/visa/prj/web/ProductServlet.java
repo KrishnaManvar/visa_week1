@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.visa.prj.dao.FetchException;
+import com.visa.prj.dao.PersistenceException;
 import com.visa.prj.dao.ProductDao;
 import com.visa.prj.dao.ProductDaoJdbcImpl;
 import com.visa.prj.entity.Product;
@@ -60,8 +61,26 @@ public class ProductServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		Product p = new Product();
+		p.setName(request.getParameter("name"));
+		p.setCategory(request.getParameter("category"));
+		p.setPrice(Double.parseDouble(request.getParameter("price")));
+		p.setCount(Integer.parseInt(request.getParameter("count")));
+		
+		ProductDao productDao = new ProductDaoJdbcImpl();
+		try {
+			
+			int id = productDao.addProduct(p);
+			response.setContentType("text/html");
+
+			response.getWriter().println("Product added with id" + id);
+			response.getWriter().println("<br/> <a href='index.html'>Back</a>");
+			
+		} catch (PersistenceException e) {
+			e.printStackTrace();
+			//System.out.println(e.getMessage());
+			
+		}
 	}
 
 }
